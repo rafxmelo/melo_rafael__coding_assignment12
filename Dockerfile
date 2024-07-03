@@ -4,7 +4,8 @@ FROM node:14-alpine AS build
 WORKDIR /melo_rafael_ui_garden
 
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
+RUN npm install styled-components @types/styled-components --save
 
 COPY . .
 RUN npm run build
