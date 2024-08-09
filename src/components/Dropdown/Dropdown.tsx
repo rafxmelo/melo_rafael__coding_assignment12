@@ -7,8 +7,8 @@ const StyledSelect = styled.select`
   font-size: 1rem;
 `;
 
-const Dropdown: React.FC<DropdownProps> = ({ options, onChange }) => (
-  <StyledSelect onChange={onChange}>
+const Dropdown: React.FC<DropdownProps> = ({disabled ,options, onChange }) => (
+  <StyledSelect disabled={disabled} onChange={onChange}>
     {options.map((option, index) => (
       <option key={index} value={option.value}>
         {option.label}
